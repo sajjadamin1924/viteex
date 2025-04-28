@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from '../../commoncomponents/header/Header';
+import Footer from '../../commoncomponents/footer/Footer';
 
 const Moreview = () => {
   return (
-    <div>Moreview</div>
+    <>
+    <Header />
+    <Footer />
+    </>
   )
 }
 

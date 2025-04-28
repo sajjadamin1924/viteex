@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Header from "../../commoncomponents/header/Header";
+import Footer from "../../commoncomponents/footer/Footer";
 
 const Productpage = () => {
   return (
-    <div>Productpage</div>
-  )
-}
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
+};
 
 export default Productpage;

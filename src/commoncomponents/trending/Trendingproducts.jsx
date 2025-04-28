@@ -1,30 +1,33 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react'; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-const Trendingproducts = () => {
+const CardSlider = () => {
+  const cards = [1, 2, 3, 4, 5];
+
   return (
-    <div className="px-4 flex items-center justify-between">
-      
-      <h1 className="text-xl font-bold">TRENDING PRODUCTS</h1>
-
-      
-      <div className="px-12 flex items-center space-x-2">
-        <button className="p-2 rounded-full bg-[#54ff6c] hover:bg-[#54ff6c]/90">
-          <ChevronLeft size={20} />
-        </button>
-        <button className="p-2 rounded-full bg-[#54ff6c] hover:bg-[#54ff6c]/90">
-          <ChevronRight size={20} />
-        </button>
-      </div>
-
-      <div className='grid grid-cols-3 '>
-        <img src="src/assets/images/Rectangle 56.png" alt="" />
-        <img src="src/assets/images/Rectangle 56.png" alt="" />
-        <img src="src/assets/images/Rectangle 56.png" alt="" />
-
-      </div>
+    <div className="flex items-center justify-center min-h-screen bg-teal-200">
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        slidesPerView={3}
+        centeredSlides={true}
+        loop={true}
+        spaceBetween={30}
+        className="w-[600px]"
+      >
+        {cards.map((card, index) => (
+          <SwiperSlide key={index}>
+            <div className="bg-blue-400 w-28 h-44 rounded-lg flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+              {card}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
 
-export default Trendingproducts;
+export default CardSlider;

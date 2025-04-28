@@ -3,7 +3,8 @@ import { FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const Footer =() => {
   return (
-    <footer className="bg-[#3E3E3D] text-white py-12 px-4">
+    
+      <footer className="bg-[#3E3E3D] text-white py-12 px-12">
       <div className="max-w-7xl  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
         
         <div>
@@ -27,7 +28,7 @@ const Footer =() => {
           <p>10AM UNTIL 5PM EST.</p>
         </div>
 
-        {/* Website & Support */}
+      
         <div>
           <h2 className="text-lg font-semibold mb-2">WEBSITE</h2>
           <p>elliebathbedandbaby.com</p>
@@ -48,6 +49,9 @@ const Footer =() => {
 
       
     </footer>
+
+    
+    
   );
 }
 export default Footer;

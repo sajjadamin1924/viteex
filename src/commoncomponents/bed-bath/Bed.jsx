@@ -4,7 +4,7 @@ import { IoArrowForwardSharp } from "react-icons/io5";
 const Bed = () => {
   return (
     <>
-      <h1 className="px-4 mt-4 mb-4">BED & BATH</h1>
+      <h1 className="px-12 mt-4 mb-4">BED & BATH</h1>
 
       <div className="grid grid-cols-7 gap-2 px-12">
         {[

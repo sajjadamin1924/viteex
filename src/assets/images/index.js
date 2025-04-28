@@ -1,0 +1,1 @@
+export {default as babyImage} from './baby.png';

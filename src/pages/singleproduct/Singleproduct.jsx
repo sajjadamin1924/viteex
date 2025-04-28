@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from "../../commoncomponents/header/Header"
+import Footer from "../../commoncomponents/footer/Footer"
 
 const Singleproduct = () => {
   return (
-    <div>Singleproduct</div>
+    <>
+    <Header />
+    <Footer />
+    </>
   )
 }
 

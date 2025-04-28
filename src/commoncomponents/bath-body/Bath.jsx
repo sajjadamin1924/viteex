@@ -4,7 +4,7 @@ import { IoArrowForwardSharp } from "react-icons/io5";
 const Bath = () => {
   return (
     <>
-      <h1 className="px-4 mt-4 mb-4">BATH & BODY</h1>
+      <h1 className="px-12 mt-4 mb-4">BATH & BODY</h1>
 
       <div className="w-full py-6 bg-white flex gap-4 px-12">
       <div className="w-2/3 grid grid-cols-4 gap-2">
