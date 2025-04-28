@@ -19,7 +19,7 @@ const KidsCollection = () => {
         <button className='bg-green-500 rounded-3xl py-2 px-6 font-bold mt-6'>Shop Now</button>
         </div>
         <div className='w-1/2 pt-12'>
-        <img  className=" border-8 border-l-[#C4C4C4] border-t-[#C4C4C4]" src="src/assets/images/baby.png" alt="" />
+        <img  className=" border-t-8 rounded-t-4xl border-l-8  border-l-[#C4C4C4] border-t-[#C4C4C4]" src="src/assets/images/baby.png" alt="" />
         </div>
     </div>
     </div>
