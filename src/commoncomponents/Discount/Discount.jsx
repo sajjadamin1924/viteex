@@ -1,13 +1,23 @@
 import React from "react";
+import { babyImage, Blue, Green, Rectangle24, Rectangle32 } from "../../assets/images";
 
 const Discount = () => {
   return (
     <>
-      <h1 className="px-12 mt-4 mb-4">DISCOUNT OFFERS</h1>
+      <div className="relative w-fit mt-8 mb-4">
+        {/* Corner Images */}
+        <img src={Green} alt="Top Left" className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full" />
+        <img src={Blue} alt="Top Right" className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full" />
+        <img src={Blue} alt="Bottom Left" className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full" />
+        <img src={Green} alt="Bottom Right" className="absolute bottom-0 right-0 left-[253px] top-[36px] translate-x-full translate-y-full" />
+      
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">DISCOUNT OFFERS</h1>
+      </div>
       <div className="w-full bg-white grid grid-cols-3 gap-4 px-12 ">
         <div className="relative group">
           <img
-            src="src/assets/images/Rectangle 32.png"
+            src={Rectangle32}
             className="w-full h-full"
             alt=""
           />
@@ -28,7 +38,7 @@ const Discount = () => {
         </div>
         <div className="relative group">
           <img
-            src="src/assets/images/Rectangle 24.png"
+            src={Rectangle24}
             className="w-full h-full"
             alt=""
           />
@@ -52,7 +62,7 @@ const Discount = () => {
         </div>
         <div className="relative group">
           <img
-            src="src/assets/images/baby.png"
+            src={babyImage}
             className="w-full h-full"
             alt=""
           />

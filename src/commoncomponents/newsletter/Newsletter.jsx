@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { babyImage } from '../../assets/images';
 
 const Newsletter = () => {
   return (
@@ -7,7 +7,7 @@ const Newsletter = () => {
       <div
         className="rounded-xl text-center text-black p-10" 
         style={{
-          backgroundImage: `linear-gradient(100deg, #54FF6C, #5892A9)`,
+          backgroundImage: `linear-gradient(100deg, rgba(84, 255, 108, 0.7), rgba(88, 146, 169, 0.7)), url(${babyImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -19,9 +19,9 @@ const Newsletter = () => {
           <input
             type="text"
             placeholder="Your email address"
-            className="px-4 py-2 rounded-3xl text-black"
+            className="px-8 py-2 rounded-3xl text-black border-1 border-[#777777] outline-0"
           />
-          <button className="bg-[#54ff6c] px-10 py-2 rounded-3xl text-black font-semibold">
+          <button className="bg-[#54FF6C] px-10 py-2 rounded-3xl text-black font-bold">
             Submit
           </button>
         </div>

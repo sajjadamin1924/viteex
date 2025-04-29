@@ -1,10 +1,12 @@
 import React from "react";
 import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
+import { Logo } from "../../assets/images";
+import { FaAngleDown } from "react-icons/fa";
 
 const Header = () => {
   return (
     <div>
-      <div className="bg-black text-white text-sm px-4 py-2 flex justify-between items-center">
+      <div className="bg-black text-white text-sm px-12 py-2 flex justify-between items-center">
         <div>
           FREE SHIPPING ON $50+ FOR REWARDS MEMBERS SIGN IN OR JOIN DETAILS
         </div>
@@ -25,16 +27,19 @@ const Header = () => {
       </div>
       <div className="flex px-4 justify-between items-center">
         <div>
-          <img src="src/assets/images/Logo.png" alt="Logo" />
+          <img src={Logo} alt="Logo" />
         </div>
 
         <div className="flex items-center">
           <input
             type="text"
-            className="bg-[#CFCFCF] p-4 px-20 items-start"
+            className="bg-[#CFCFCF] p-4 pr-20 pl-12 items-start outline-0"
             placeholder="Search anything..."
           />
-          <p className="cursor-pointer bg-[#91cb94] p-4">Categories</p>
+          <p className="cursor-pointer bg-[#91cb94] p-4 flex items-center justify-between">
+            Categories <FaAngleDown />
+          </p>
+
           <p className="cursor-pointer bg-[#197CC0] p-4">
             <CiSearch className="text-white text-2xl" />
           </p>
@@ -63,7 +68,9 @@ const Header = () => {
           <li>Value Kits & Bundle Deals</li>
           <li>Sales & Discounts</li>
           <li>Gifts</li>
-          <li>More</li>
+          <li className="flex items-center gap-1">
+            More <FaAngleDown />
+          </li>
         </ul>
       </div>
     </div>

@@ -1,36 +1,46 @@
 import React from "react";
 import { IoArrowForwardSharp } from "react-icons/io5";
+import { babyImage, Blue, Green, Rectangle20, Rectangle21, Rectangle22, Rectangle23, Rectangle24, Rectangle25, Rectangle26, Rectangle27, Rectangle28, Rectangle29, Rectangle30, Rectangle31, Rectangle32 } from "../../assets/images";
 
 const Bed = () => {
   return (
     <>
-      <h1 className="px-12 mt-4 mb-4">BED & BATH</h1>
+      <div className="relative w-fit mt-4 mb-8">
+        {/* Corner Images */}
+        <img src={Green} alt="Top Left" className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full" />
+        <img src={Blue} alt="Top Right" className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full" />
+        <img src={Blue} alt="Bottom Left" className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full" />
+        <img src={Green} alt="Bottom Right" className="absolute bottom-0 right-0 left-[180px] top-[36px] translate-x-full translate-y-full" />
+      
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">BED & BATH</h1>
+      </div>
 
-      <div className="grid grid-cols-7 gap-2 px-12">
+      <div className="grid grid-cols-7 gap-4 px-12">
         {[
-          { img: "src/assets/images/Rectangle 20.png", text: "BABY SHAMPOO" },
-          { img: "src/assets/images/Rectangle 21.png", text: "BABY + DIAPERS" },
-          { img: "src/assets/images/Rectangle 22.png", text: "WIPES" },
+          { img: Rectangle20, text: "BABY SHAMPOO" },
+          { img: Rectangle21, text: "BABY + DIAPERS" },
+          { img: Rectangle22, text: "WIPES" },
           {
-            img: "src/assets/images/Rectangle 23.png",
+            img: Rectangle23,
             text: "SHAMPOO & BODY WASH",
           },
-          { img: "src/assets/images/baby.png", text: "DIPER PACKS" },
-          { img: "src/assets/images/Rectangle 24.png", text: "CONDITIONER" },
+          { img: babyImage, text: "DIPER PACKS" },
+          { img: Rectangle24, text: "CONDITIONER" },
           {
-            img: "src/assets/images/Rectangle 25.png",
+            img: Rectangle25,
             text: "GENTLE MOISTURE LOTION",
           },
-          { img: "src/assets/images/Rectangle 26.png", text: "BODY OIL" },
-          { img: "src/assets/images/Rectangle 27.png", text: "BUBBLE BATH" },
-          { img: "src/assets/images/Rectangle 32.png", text: "DIPERS" },
-          { img: "src/assets/images/Rectangle 28.png", text: "BODY MIST" },
+          { img: Rectangle26, text: "BODY OIL" },
+          { img: Rectangle27, text: "BUBBLE BATH" },
+          { img: Rectangle32, text: "DIPERS" },
+          { img: Rectangle28, text: "BODY MIST" },
           {
-            img: "src/assets/images/Rectangle 29.png",
+            img: Rectangle29,
             text: "DEEP MOISTURE BODY BUTTER",
           },
-          { img: "src/assets/images/Rectangle 30.png", text: "BODY SCRUB" },
-          { img: "src/assets/images/Rectangle 31.png", text: "BATH SALT" },
+          { img: Rectangle30, text: "BODY SCRUB" },
+          { img: Rectangle31, text: "BATH SALT" },
         ].map((item, index) => (
           <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
             <img src={item.img} className="h-full" alt="" />

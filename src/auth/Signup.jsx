@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Eye, EyeOff, CircleX } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Apple, Download, Download1, Facebook, Left, Name, Password } from "../assets/images";
 
 
 const Signup = () => {
@@ -95,7 +96,7 @@ const Signup = () => {
       <div className="flex h-screen">
         <div className="w-1/2 flex items-center justify-center bg-[#e9f8e5]">
           <img
-            src="src/assets/images/left.jpg"
+            src={Left}
             alt="Student"
             className="max-h-[90%] rounded-lg"
             style={{ background: "#e9f8e5" }}
@@ -111,7 +112,7 @@ const Signup = () => {
             <label className="block text-gray-600 mb-1">Full Name</label>
             <div className="relative flex items-center w-full">
               <img
-                src="src/assets/images/name.png"
+                src={Name}
                 alt="Student"
                 className="absolute left-4 w-6 h-6"
               />
@@ -133,7 +134,7 @@ const Signup = () => {
             <label className="block text-gray-600 mb-1">Email</label>
             <div className="relative flex items-center w-full">
               <img
-                src="src/assets/images/download1.png"
+                src={Download1}
                 alt="Student"
                 className="absolute left-4 w-6 h-6"
               />
@@ -155,7 +156,7 @@ const Signup = () => {
             <label className="block text-gray-600 mb-1">Password</label>
             <div className="relative flex items-center w-full">
               <img
-                src="src/assets/images/password.png"
+                src={Password}
                 alt="Student"
                 className="absolute left-4 w-6 h-6"
               />
@@ -222,7 +223,7 @@ const Signup = () => {
               <div className="flex items-center justify-center  px-4">
                 <button className="cursor-pointer rounded-full p-1 bg-gray-200 hover:bg-gray-500">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white">
-                    <img src="src/assets/images/download.png" alt="" className="w-6 h-6" />
+                    <img src={Download} alt="" className="w-6 h-6" />
                   </div>
                 </button>
               </div>
@@ -230,14 +231,14 @@ const Signup = () => {
               <div className="flex items-center justify-center  px-4">
                 <button className="cursor-pointer rounded-full p-1 bg-gray-200 hover:bg-gray-500">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white">
-                    <img src="src/assets/images/facebook.png" alt="" className="w-6 h-6" />
+                    <img src={Facebook} alt="" className="w-6 h-6" />
                   </div>
                 </button>
               </div>
               <div className="flex items-center justify-center  px-4">
                 <button className="cursor-pointer rounded-full p-1 bg-gray-200 hover:bg-gray-500">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white">
-                    <img src="src/assets/images/apple.png" alt="" className="w-6 h-6" />
+                    <img src={Apple} alt="" className="w-6 h-6" />
                   </div>
                 </button>
               </div>

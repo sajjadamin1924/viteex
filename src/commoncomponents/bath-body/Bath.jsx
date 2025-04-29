@@ -1,51 +1,112 @@
 import React from "react";
 import { IoArrowForwardSharp } from "react-icons/io5";
+import {
+  Blue,
+  Green,
+  Rectangle20,
+  Rectangle21,
+  Rectangle22,
+  Rectangle23,
+  Rectangle24,
+  Rectangle25,
+  Rectangle26,
+  Rectangle27,
+  Rectangle28,
+  Rectangle29,
+  Rectangle30,
+  Rectangle31,
+  Rectangle7,
+} from "../../assets/images";
 
 const Bath = () => {
   return (
     <>
-      <h1 className="px-12 mt-4 mb-4">BATH & BODY</h1>
+      <div className="relative w-fit mt-8 mb-4">
+        {/* Corner Images */}
+        <img
+          src={Green}
+          alt="Top Left"
+          className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Top Right"
+          className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Bottom Left"
+          className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full"
+        />
+        <img
+          src={Green}
+          alt="Bottom Right"
+          className="absolute bottom-0 right-0 left-[198px] top-[36px] translate-x-full translate-y-full"
+        />
+
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">BATH & BODY</h1>
+      </div>
 
       <div className="w-full py-6 bg-white flex gap-4 px-12">
-      <div className="w-2/3 grid grid-cols-4 gap-2">
-  {[
-    { img: "src/assets/images/Rectangle 20.png", text: "BABY SHAMPOO" },
-    { img: "src/assets/images/Rectangle 21.png", text: "BABY + DIAPERS" },
-    { img: "src/assets/images/Rectangle 22.png", text: "WIPES" },
-    { img: "src/assets/images/Rectangle 23.png", text: "SHAMPOO & BODY WASH" },
-    { img: "src/assets/images/Rectangle 24.png", text: "CONDITIONER" },
-    { img: "src/assets/images/Rectangle 25.png", text: "GENTLE MOISTURE LOTION" },
-    { img: "src/assets/images/Rectangle 26.png", text: "BODY OIL" },
-    { img: "src/assets/images/Rectangle 27.png", text: "BUBBLE BATH" },
-    { img: "src/assets/images/Rectangle 28.png", text: "BODY MIST" },
-    { img: "src/assets/images/Rectangle 29.png", text: "DEEP MOISTURE BODY BUTTER" },
-    { img: "src/assets/images/Rectangle 30.png", text: "BODY SCRUB" },
-    { img: "src/assets/images/Rectangle 31.png", text: "BATH SALT" },
-  ].map((item, index) => (
-    <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
-      <img src={item.img} alt="" />
-      <p className="mt-4 text-sm">{item.text}</p>
-      <button className="flex items-center gap-1 text-green-600 mt-2">
-        View All
-        <IoArrowForwardSharp />
-      </button>
-    </div>
-  ))}
-</div>
+        <div className="w-2/3 grid grid-cols-4 gap-4">
+          {[
+            { img: Rectangle20, text: "BABY SHAMPOO" },
+            { img: Rectangle21, text: "BABY + DIAPERS", badge: "7 size" },
+            { img: Rectangle22, text: "WIPES", badge: "4 Scents" },
+            {
+              img: Rectangle23,
+              text: "SHAMPOO & BODY WASH",
+              badge: "6 Scents",
+            },
+            { img: Rectangle24, text: "CONDITIONER", badge: "6 Scents" },
+            {
+              img: Rectangle25,
+              text: "GENTLE MOISTURE LOTION",
+              badge: "6 Scents",
+            },
+            { img: Rectangle26, text: "BODY OIL", badge: "6 Scents" },
+            { img: Rectangle27, text: "BUBBLE BATH", badge: "6 Scents" },
+            { img: Rectangle28, text: "BODY MIST", badge: "4 Scents" },
+            {
+              img: Rectangle29,
+              text: "DEEP MOISTURE BODY BUTTER",
+              badge: "6 Scents",
+            },
+            { img: Rectangle30, text: "BODY SCRUB", badge: "6 Scents" },
+            { img: Rectangle31, text: "BATH SALT", badge: "4 Scents" },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
+              <div className="relative">
+                {item.badge && item.badge.trim() !== "" && (
+                  <div className="absolute top-[-8px] left-[-8px] bg-[#2E2E2E] text-white text-xs px-2 py-1 rounded-br-xl">
+                    {item.badge}
+                  </div>
+                )}
 
+                <img src={item.img} alt={item.text} />
+              </div>
+              <p className="mt-4 text-sm">{item.text}</p>
+              <button className="flex items-center gap-1 text-green-600 mt-2">
+                View All
+                <IoArrowForwardSharp />
+              </button>
+            </div>
+          ))}
+        </div>
 
-<div className="relative w-1/3">
-  <img src="src/assets/images/Rectangle 7.png" className="h-full w-full" alt="baby image" />
-  
-  
-  <div className="absolute top-36 left-8 flex flex-col items-center justify-center text-black">
-    <h2 className="text-2xl font-bold mb-4">VALUE KITS & BUNDLE DEALS</h2>
-    <button className="bg-[#54FF6C]  text-white font-bold py-2 px-4 rounded mt-100">
-      View All
-    </button>
-  </div>
-</div>
+        <div className="relative w-1/3">
+          <img src={Rectangle7} className="h-full w-full" alt="baby image" />
 
+          <div className="absolute top-36 left-8 flex flex-col items-center justify-center text-black">
+            <h2 className="text-2xl font-bold mb-4">
+              VALUE KITS & BUNDLE DEALS
+            </h2>
+            <button className="bg-[#54FF6C]  text-white font-bold py-2 px-4 rounded mt-100">
+              View All
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
