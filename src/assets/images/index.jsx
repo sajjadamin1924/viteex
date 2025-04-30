@@ -27,6 +27,24 @@ export {default as Name} from './name.png';
 export {default as Password} from './password.png';
 export {default as Green} from "./blue.png";
 export {default as Blue} from "./green.png";
+export {default as Truck} from './truck.png';
+export {default as Delete} from './delete.png';
+export {default as Bill} from './bill.png';
+export {default as Call} from './call.png';
+export {default as Mail} from './mail.png';
+export {default as Location} from './location.png';
+export {default as Wallet } from "./wallet.png";
+export {default as Cash} from './cash.png';
+export {default as Paypal} from './paypal.png';
+export {default as Bank} from './bank.png';
+export {default as Card} from './card.png';
+export {default as Visa} from './visa.png';
+export {default as Union} from './union.png';
+export {default as Dots} from './dots.png';
+
+
+
+
 
 
 

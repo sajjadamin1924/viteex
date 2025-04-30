@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../commoncomponents/header/Header';
 import Footer from '../../commoncomponents/footer/Footer';
+import { Blue, Green } from '../../assets/images';
 
 const Aboutus = () => {
   return (
@@ -8,7 +9,32 @@ const Aboutus = () => {
       <Header />
       <div className='px-12'>
         <div>
-          <h1 className='font-bold text-2xl mt-4'>About us</h1>
+        <div className="relative w-fit mt-8 mb-4">
+        {/* Corner Images */}
+        <img
+          src={Green}
+          alt="Top Left"
+          className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Top Right"
+          className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Bottom Left"
+          className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full"
+        />
+        <img
+          src={Green}
+          alt="Bottom Right"
+          className="absolute bottom-0 right-0 left-[145px] top-[36px] translate-x-full translate-y-full"
+        />
+
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">About Us</h1>
+      </div>
 
           <div className='text-center mt-4'>
             <h1 className='text-4xl font-bold mt-4'>Welcome To Ellie</h1>
@@ -19,14 +45,64 @@ const Aboutus = () => {
         </div>
 
         <div className='mt-4'>
-          <h1 className='font-bold text-2xl mt-4 '>Mission</h1>
+        <div className="relative w-fit mt-8 mb-4">
+        {/* Corner Images */}
+        <img
+          src={Green}
+          alt="Top Left"
+          className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Top Right"
+          className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Bottom Left"
+          className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full"
+        />
+        <img
+          src={Green}
+          alt="Bottom Right"
+          className="absolute bottom-0 right-0 left-[128px] top-[36px] translate-x-full translate-y-full"
+        />
+
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">Mission</h1>
+      </div>
           <p className='mt-6 px-12 text-center'>
             Ellie, bath bed & baby company specializes in bath bed & baby products for babies and all ages. Our product line includes premium quality fabrics for our bed linens and towels, and a full complement of plant-based non-toxic formulated body care products, wipes and disposable baby diapers all designed with love and care for healthy families.
           </p>
         </div>
 
         <div className='mt-4'>
-          <h1 className='font-bold text-2xl mt-4 '>Goal</h1>
+        <div className="relative w-fit mt-8 mb-4">
+        {/* Corner Images */}
+        <img
+          src={Green}
+          alt="Top Left"
+          className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Top Right"
+          className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full"
+        />
+        <img
+          src={Blue}
+          alt="Bottom Left"
+          className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full"
+        />
+        <img
+          src={Green}
+          alt="Bottom Right"
+          className="absolute bottom-0 right-0 left-[92px] top-[36px] translate-x-full translate-y-full"
+        />
+
+        {/* Heading */}
+        <h1 className="px-12 py-4  text-2xl font-bold">Goal</h1>
+      </div>
           <p className='mt-6 px-12 text-center'>
             Ellie products are designed with love and care, always prioritizing what is most important. All our products are responsibly manufactured, with pH levels safe for infants and all ages. Our products are natural, free of harmful chemicals, and respectful of the environment to ensure our children inherit a healthy green planet. No animals were used in the testing of our products.
           </p>
