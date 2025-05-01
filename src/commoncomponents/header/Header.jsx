@@ -50,7 +50,7 @@ const Header = () => {
         <div className="flex items-center">
           <input
             type="text"
-            className="bg-[#CFCFCF] p-4 pr-20 pl-12 items-start outline-0"
+            className="bg-[#CFCFCF] p-4 pr-40 pl-6 items-start outline-0"
             placeholder="Search anything..."
           />
           <p className="cursor-pointer bg-[#91cb94] p-4 flex items-center justify-between">
@@ -61,7 +61,7 @@ const Header = () => {
           </p>
         </div>
 
-        <div className="flex gap-4 items-center justify-between">
+        <div className="flex gap-4 items-center justify-between pr-12">
           <span>
             <CiHeart className="text-2xl" />
           </span>

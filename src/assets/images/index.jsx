@@ -41,6 +41,8 @@ export {default as Card} from './card.png';
 export {default as Visa} from './visa.png';
 export {default as Union} from './union.png';
 export {default as Dots} from './dots.png';
+export {default as Heart} from './heart.png';
+export {default as Single} from './single.png';
 
 
 

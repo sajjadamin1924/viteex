@@ -5,13 +5,9 @@ const Newsletter = () => {
   return (
     <div className="px-12 mt-20 mb-16">
       <div
-        className="rounded-xl text-center text-black p-10" 
+        className="rounded-xl text-center bg-cover bg-center min-h-80  text-black p-10" 
         style={{
           backgroundImage: `linear-gradient(100deg, rgba(84, 255, 108, 0.7), rgba(88, 146, 169, 0.7)), url(${babyImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '300px',
         }}
       >
         <h1 className="text-3xl font-bold text-center">Subscribe to our newsletter</h1>

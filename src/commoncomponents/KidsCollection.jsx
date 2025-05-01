@@ -15,7 +15,7 @@ const KidsCollection = () => {
       <img src={Green} alt="Top Left" className="absolute top-0 left-0 -translate-x-full -translate-y-full" />
       <img src={Blue} alt="Top Right" className="absolute top-0 right-0 translate-x-full -translate-y-full" />
       <img src={Blue} alt="Bottom Left" className="absolute bottom-0 left-0 -translate-x-full translate-y-full" />
-      <img src={Green} alt="Bottom Right" className="absolute bottom-0 right-0 translate-x-full translate-y-full" />
+      <img src={Green} alt="Bottom Right" className="absolute top-[19px] left-[102px] translate-x-full translate-y-full" />
 
       Collection
     </span>

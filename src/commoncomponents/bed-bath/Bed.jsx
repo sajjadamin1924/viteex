@@ -2,7 +2,13 @@ import React from "react";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { babyImage, Blue, Green, Rectangle20, Rectangle21, Rectangle22, Rectangle23, Rectangle24, Rectangle25, Rectangle26, Rectangle27, Rectangle28, Rectangle29, Rectangle30, Rectangle31, Rectangle32 } from "../../assets/images";
 
+import { useNavigate } from "react-router-dom";
+
 const Bed = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/moreview");
+  }
   return (
     <>
       <div className="relative w-fit mt-4 mb-8">
@@ -45,7 +51,7 @@ const Bed = () => {
           <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
             <img src={item.img} className="h-full" alt="" />
             <p className="mt-4 text-sm">{item.text}</p>
-            <button className="flex items-center gap-1 text-green-600 mt-2">
+            <button className="flex items-center gap-1 text-green-600 mt-2" onClick={handleClick}>
               View All
               <IoArrowForwardSharp />
             </button>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Header from "../../commoncomponents/header/Header";
 import Footer from "../../commoncomponents/footer/Footer";
-import { Rectangle56 } from "../../assets/images";
+import { Heart, Rectangle56, Single } from "../../assets/images";
 
 const ProductPage = () => {
-  const [quantity, setQuantity] = useState(3);
+  const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (increment) => {
     setQuantity((prev) => Math.max(1, prev + increment));
@@ -45,25 +45,34 @@ const ProductPage = () => {
               <span className="text-green-600 font-bold mr-2">$28.00</span>
               <span className="line-through text-gray-400">$38.00</span>
             </div>
-            <div className="space-x-4">
-            <button className="text-gray-500 mb-4">♡ Add to Favorites</button>
-            <button className="text-gray-500 mb-4">♡ Add to Favorites</button>
-            </div>
+            <div className="space-x-4 flex ">
+              <button className="flex items-center text-gray-500 mb-4">
+                <img src={Heart} className="w-4 h-4 mr-2" alt="heart" />
+                Add to Favorites
+              </button>
 
-            
+              <button className="flex items-center text-gray-500 mb-4">
+                <img src={Single} className="w-4 h-4 mr-2" alt="heart" />
+                Add to Favorites
+              </button>
+            </div>
 
             {/* Colors */}
             <div className="mb-4">
               <span className="block font-semibold mb-1">Color:</span>
               <div className="flex gap-2">
-                {["bg-purple-300", "bg-purple-500", "bg-gray-400", "bg-green-800", "bg-green-500"].map(
-                  (color, i) => (
-                    <div
-                      key={i}
-                      className={`w-6 h-6  ${color} border cursor-pointer`}
-                    />
-                  )
-                )}
+                {[
+                  "bg-[#C1A6B9]",
+                  "bg-[#5A4F4F]",
+                  "bg-[#9497C6]",
+                  "bg-[#193950]",
+                  "bg-[#257B31]",
+                ].map((color, i) => (
+                  <div
+                    key={i}
+                    className={`w-6 h-6  ${color} border cursor-pointer`}
+                  />
+                ))}
               </div>
             </div>
 
@@ -74,7 +83,7 @@ const ProductPage = () => {
                 {["S", "M", "L", "XL"].map((size) => (
                   <button
                     key={size}
-                    className="border px-3 py-1 rounded hover:bg-gray-100"
+                    className=" px-3 py-1 rounded hover:bg-gray-100"
                   >
                     {size}
                   </button>
@@ -88,16 +97,16 @@ const ProductPage = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleQuantityChange(-1)}
-                  className="px-3 py-1 border rounded"
+                  className="px-3 py-1 "
                 >
                   -
                 </button>
-                <span className="min-w-[24px] text-center">
+                <span className="min-w-[24px] text-center bg-[#F3F3F3] ">
                   {quantity.toString().padStart(2, "0")}
                 </span>
                 <button
                   onClick={() => handleQuantityChange(1)}
-                  className="px-3 py-1 border rounded"
+                  className="px-3 py-1 "
                 >
                   +
                 </button>
@@ -106,20 +115,23 @@ const ProductPage = () => {
 
             {/* Description */}
             <div className="mb-6">
-              <span className="inline-block bg-green-500 text-white px-2 py-1 rounded text-sm mb-2">
+              <span className="inline-block bg-green-500 text-white px-2 py-1  text-sm font-bold mb-2">
                 Description
               </span>
-              <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <p className="text-[#444444] w-3/4 text-sm letter-spacing-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
 
             {/* Action Buttons */}
             <div className="flex gap-4">
-              <button className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600">
+              <button className="bg-green-500 text-white px-6 py-2 rounded-full font-bold">
                 ADD TO CART
               </button>
-              <button className="border border-blue-700 text-blue-700 px-6 py-2 rounded-full hover:bg-blue-50">
+              <button className="border border-[#343434] text-[#0702FF] px-6 py-2 rounded-full font-bold">
                 BUY IT NOW
               </button>
             </div>

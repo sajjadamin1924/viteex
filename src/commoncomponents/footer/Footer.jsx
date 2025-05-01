@@ -4,18 +4,17 @@ import { Rectangle7 } from "../../assets/images";
 const Footer = () => {
   return (
     <footer className="relative bg-[#3E3E3E] text-white py-8 px-12 overflow-hidden">
-
-      
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-10"
+        className="absolute inset-0  bg-cover bg-center opacity-10"
         style={{ backgroundImage: `url(${Rectangle7})` }}
       />
 
       {/* Footer content */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-4  gap-6">
         <div>
-          <h2 className="text-lg font-semibold mb-2">CORPORATE MAILING ADDRESS</h2>
+          <h2 className="text-lg font-semibold mb-2">
+            CORPORATE MAILING ADDRESS
+          </h2>
           <p>1100 Peachtree Street</p>
           <p>Suite 200</p>
           <p>Atlanta GA 30309</p>
@@ -40,21 +39,28 @@ const Footer = () => {
           <p>support@elliebathbedandbaby.com</p>
 
           <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-[#0702FF] bg-white rounded-full p-2 hover:text-blue-400">
+            <a
+              href="#"
+              className="text-[#0702FF] bg-white rounded-full p-2 hover:text-blue-400"
+            >
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="text-[#0702FF] bg-white rounded-full p-2 hover:text-pink-500">
+            <a
+              href="#"
+              className="text-[#0702FF] bg-white rounded-full p-2 hover:text-pink-500"
+            >
               <FaInstagram size={20} />
             </a>
-            <a href="#" className="text-[#0702FF] bg-white rounded-full p-2 hover:text-blue-600">
+            <a
+              href="#"
+              className="text-[#0702FF] bg-white rounded-full p-2 hover:text-blue-600"
+            >
               <FaFacebookF size={20} />
             </a>
           </div>
         </div>
-
       </div>
 
-    
       <div className="relative z-10 text-sm text-white text-center mt-8 space-x-6">
         <a href="#">Terms of Use</a>
         <a href="#">Privacy Policy</a>

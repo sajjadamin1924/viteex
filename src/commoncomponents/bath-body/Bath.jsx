@@ -1,5 +1,6 @@
-import React from "react";
+import React, { use } from "react";
 import { IoArrowForwardSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import {
   Blue,
   Green,
@@ -19,6 +20,11 @@ import {
 } from "../../assets/images";
 
 const Bath = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/moreview");
+  }
   return (
     <>
       <div className="relative w-fit mt-8 mb-4">
@@ -87,7 +93,7 @@ const Bath = () => {
                 <img src={item.img} alt={item.text} />
               </div>
               <p className="mt-4 text-sm">{item.text}</p>
-              <button className="flex items-center gap-1 text-green-600 mt-2">
+              <button className="flex items-center gap-1 text-green-600 mt-2" onClick={handleClick}> 
                 View All
                 <IoArrowForwardSharp />
               </button>
