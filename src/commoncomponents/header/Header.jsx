@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
-import { Logo } from "../../assets/images";
 import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Logo } from "../../assets/images";
 
 const Header = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isCategoryDropdownVisible, setIsCategoryDropdownVisible] =
+    useState(false);
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleDropdown = () => {
     setIsDropdownVisible((prevState) => !prevState);
+  };
+
+  const toggleCategoryDropdown = () => {
+    setIsCategoryDropdownVisible((prev) => !prev);
   };
 
   const handleLogOut = () => {
@@ -17,6 +24,46 @@ const Header = () => {
     setIsDropdownVisible(false);
     navigate("/");
   };
+
+  const handleClickCart = () => {
+    navigate("/mycart");
+  };
+
+  const handleCategoryClick = (category) => {
+    setIsCategoryDropdownVisible(false);
+    const id = category.toLowerCase().replace(/\s+/g, "-");
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleSearch = () => {
+  const matchedCategory = categories.find(
+    (cat) => cat.toLowerCase() === searchTerm.trim().toLowerCase()
+  );
+
+  if (matchedCategory) {
+    const id = matchedCategory.toLowerCase().replace(/\s+/g, "-");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  } else {
+    alert("Category not found");
+  }
+};
+
+  
+
+  const categories = [
+    "kids Collection",
+    "Bath & Body",
+    "Bed & Bath",
+    "Trending Products",
+    "Product Collections",
+    "Discount offers",
+  ];
 
   return (
     <div>
@@ -47,17 +94,42 @@ const Header = () => {
           <img src={Logo} alt="Logo" />
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center relative">
           <input
             type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="bg-[#CFCFCF] p-4 pr-40 pl-6 items-start outline-0"
             placeholder="Search anything..."
           />
-          <p className="cursor-pointer bg-[#91cb94] p-4 flex items-center justify-between">
-            Categories <FaAngleDown />
-          </p>
+
+          {/* Categories Dropdown */}
+          <div className="relative">
+            <p
+              className="cursor-pointer bg-[#91cb94] p-4 flex items-center gap-1"
+              onClick={toggleCategoryDropdown}
+            >
+              Categories <FaAngleDown />
+            </p>
+            {isCategoryDropdownVisible && (
+              <div className="absolute bg-white border shadow-lg right-0 z-10 mt-1 w-48">
+                <ul className="text-black">
+                  {categories.map((cat) => (
+                    <li
+                      key={cat}
+                      className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                      onClick={() => handleCategoryClick(cat)}
+                    >
+                      {cat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
           <p className="cursor-pointer bg-[#197CC0] p-4">
-            <CiSearch className="text-white text-2xl" />
+            <CiSearch className="text-white text-2xl" onClick={handleSearch}/>
           </p>
         </div>
 
@@ -66,7 +138,7 @@ const Header = () => {
             <CiHeart className="text-2xl" />
           </span>
           <span>
-            <CiShoppingCart className="text-2xl" />
+            <CiShoppingCart className="text-2xl" onClick={handleClickCart} />
           </span>
           <span>
             <CiUser
@@ -82,7 +154,10 @@ const Header = () => {
                   <li className="py-2 hover:underline cursor-pointer">
                     Sign Up
                   </li>
-                  <li className="py-2 hover:underline cursor-pointer" onClick={handleLogOut}>
+                  <li
+                    className="py-2 hover:underline cursor-pointer"
+                    onClick={handleLogOut}
+                  >
                     Log Out
                   </li>
                   <li className="py-2 hover:underline cursor-pointer">

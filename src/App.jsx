@@ -12,10 +12,12 @@ import Checkout from "./pages/checkout/Checkout";
 import Aboutus from "./pages/aboutus/Aboutus";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoutes";
+import { CartProvider } from "./context/Cartcontext";
 
 function App() {
   return (
     <>
+    <CartProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Signup />} />
@@ -94,6 +96,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      </CartProvider>
     </>
   );
 }

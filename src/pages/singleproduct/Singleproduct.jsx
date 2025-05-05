@@ -2,9 +2,20 @@ import React, { useState } from "react";
 import Header from "../../commoncomponents/header/Header";
 import Footer from "../../commoncomponents/footer/Footer";
 import { Heart, Rectangle56, Single } from "../../assets/images";
+import { useCart } from "../../context/Cartcontext";
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart,cartItems } = useCart();
+  console.log("Current Cart Items:", cartItems);
+
+  const product = {
+    id: 1, 
+    name: "BODY SCRUB BEST QUALITY PACK",
+    price: 28.0,
+    image: Rectangle56,
+  };
+  
 
   const handleQuantityChange = (increment) => {
     setQuantity((prev) => Math.max(1, prev + increment));
@@ -128,13 +139,23 @@ const ProductPage = () => {
 
             {/* Action Buttons */}
             <div className="flex gap-4">
-              <button className="bg-green-500 text-white px-6 py-2 rounded-full font-bold">
+              <button
+                className="bg-green-500 text-white px-6 py-2 rounded-full font-bold"
+                onClick={() => addToCart(product, quantity)
+                  
+                }
+                
+                
+              >
                 ADD TO CART
               </button>
+             
+              
               <button className="border border-[#343434] text-[#0702FF] px-6 py-2 rounded-full font-bold">
                 BUY IT NOW
               </button>
             </div>
+            
           </div>
         </div>
       </div>
