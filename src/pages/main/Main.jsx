@@ -12,7 +12,9 @@ import Discount from '../../commoncomponents/Discount/Discount';
 const Main = () => {
   return (
     <>
+    
     <Header />
+    <div className='px-12'>
   
     <div id="kids-collection">
       <KidsCollection />
@@ -40,6 +42,7 @@ const Main = () => {
   
     <Newsletter />
     <Footer />
+    </div>
   </>
   
   )

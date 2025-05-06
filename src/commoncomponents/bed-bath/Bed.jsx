@@ -11,18 +11,34 @@ const Bed = () => {
   }
   return (
     <>
-      <div className="relative w-fit mt-4 mb-8">
-        {/* Corner Images */}
-        <img src={Green} alt="Top Left" className="absolute top-[12px] right-[30px] left-[45px] -translate-x-full -translate-y-full" />
-        <img src={Blue} alt="Top Right" className="absolute top-[12px] right-[40px] translate-x-full -translate-y-full" />
-        <img src={Blue} alt="Bottom Left" className="absolute top-[34px] left-[41px] -translate-x-full translate-y-full" />
-        <img src={Green} alt="Bottom Right" className="absolute bottom-0 right-0 left-[180px] top-[36px] translate-x-full translate-y-full" />
-      
-        {/* Heading */}
-        <h1 className="px-12 py-4  text-2xl font-bold">BED & BATH</h1>
-      </div>
+      <div className="relative w-fit mt-8 mb-4">
+             {/* Corner Images */}
+             <img
+               src={Green}
+               alt="Top Left"
+               className="absolute top-[23px] right-[0px] left-[20px] -translate-x-full -translate-y-full"
+             />
+             <img
+               src={Blue}
+               alt="Top Right"
+               className="absolute top-[22px] right-[22px] translate-x-full -translate-y-full"
+             />
+             <img
+               src={Blue}
+               alt="Bottom Left"
+               className="absolute top-[42px] left-[17px] -translate-x-full translate-y-full"
+             />
+             <img
+               src={Green}
+               alt="Bottom Right"
+               className="absolute bottom-0 right-0 left-[172px] top-[42px] translate-x-full translate-y-full"
+             />
+     
+             {/* Heading */}
+             <h1 className=" py-4  text-[32px] font-bold">BED & BATH</h1>
+           </div>
 
-      <div className="grid grid-cols-7 gap-4 px-12">
+      <div className="grid grid-cols-7 gap-4">
         {[
           { img: Rectangle20, text: "BABY SHAMPOO" },
           { img: Rectangle21, text: "BABY + DIAPERS" },
@@ -50,8 +66,8 @@ const Bed = () => {
         ].map((item, index) => (
           <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
             <img src={item.img} className="h-full" alt="" />
-            <p className="mt-4 text-sm">{item.text}</p>
-            <button className="flex items-center gap-1 text-green-600 mt-2" onClick={handleClick}>
+            <p className="mt-4 text-[18px] font-[600px]">{item.text}</p>
+            <button className="flex items-center gap-1 text-green-600 mt-2 font-[500px] text-[16px]" onClick={handleClick}>
               View All
               <IoArrowForwardSharp />
             </button>

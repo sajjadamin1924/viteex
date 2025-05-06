@@ -32,54 +32,26 @@ const Checkout = () => {
               {/* Header for cart summary */}
               <div className="bg-white px-12 py-4 rounded shadow w-full">
                 <div className="flex items-center justify-between">
-                  <p>{cartItems.length} ITEM{cartItems.length !== 1 && "S"}</p>
-                  <p>PRICE</p>
-                  <p>QUANTITY</p>
+                  <div>
+                    <p className="text-xl font-medium">
+                      {cartItems.length} ITEM{cartItems.length !== 1 && "S"}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-16 text-lg font-medium">
+                    <p>PRICE</p>
+                    <p>QUANTITY</p>
+                  </div>
                 </div>
               </div>
 
               {/* Cart Items */}
-              {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white py-4 px-12 rounded shadow w-full"
-                >
-                  <div className="flex items-start justify-between pt-4">
-                    <div className="flex gap-4">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-24 h-24 object-cover rounded"
-                      />
-                      <div>
-                        <p className="font-semibold">{item.name}</p>
-                        <p className="text-sm text-gray-500">
-                          No Brand, Family Color, Best Quality
-                        </p>
-                        <p className="text-xs text-green-500 mt-1">30% OFF</p>
-                      </div>
-                    </div>
-                    <div className="text-left">
-                      <p className="text-blue-600 font-semibold">
-                        ${item.price.toFixed(2)}
-                      </p>
-                      <p className="text-sm text-gray-400 line-through">
-                        $38.00
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <p>Qty: {item.quantity}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
 
               {/* Delivery Option */}
               <div className="bg-white py-4 px-12 rounded shadow w-full mt-4">
-                <h1 className="py-4 font-semibold text-lg">
+                <h1 className="py-4 font-medium text-[22px]">
                   Preferred Delivery Option
                 </h1>
-                <div className="flex gap-4 bg-[#F1F2F3] border w-1/3 p-4 mb-6">
+                <div className="flex gap-6 bg-[#F1F2F3] border border-[#AAAAAA] w-[45%] p-4 mb-6 rounded-md">
                   <label className="relative inline-block w-6 h-6">
                     <input
                       type="checkbox"
@@ -100,67 +72,140 @@ const Checkout = () => {
                   </label>
 
                   <div>
-                    <div className="flex items-center gap-2">
-                      <p className="font-semibold">Delivery Fee. $2</p>
-                      <img src={Truck} alt="truck" />
+                    <div className="flex items-center gap-6">
+                      <p className="font-semibold text-lg text-[#282828]">
+                        Delivery Fee. $2
+                      </p>
+                      <img
+                        className="w-[50px] h-[35px]"
+                        src={Truck}
+                        alt="truck"
+                      />
                     </div>
-                    <p className="text-sm text-gray-500">Standard</p>
-                    <p className="text-xs text-gray-400">Get by 22-24 Apr 2022</p>
+                    <p className="text-lg font-medium text-[#474747]">
+                      HOME Delievery
+                    </p>
+                    <p className="text-[17px] text-[#717171] font-medium ">
+                      Get by 22-24 Apr 2022
+                    </p>
                   </div>
                 </div>
+                {cartItems.map((item) => (
+                  <div key={item.id} className="bg-white py-4 w-full">
+                    <div className="flex items-start justify-between pt-4">
+                      <div className="flex gap-4">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-24 h-24 object-cover rounded"
+                        />
+                        <div>
+                          <p className="font-semibold text-xl">{item.name}</p>
+                          <p className="text-lg text-[#5c5c5c] font-light">
+                            No Brand, Family Color, Best Quality
+                          </p>
+                          <p className="text-lg font-semibold text-[#5c5c5c] mt-1">
+                            30% OFF
+                          </p>
+                        </div>
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[#0702da] font-semibold text-xl">
+                          <span className="text-[#1CAA24]">$</span>{" "}
+                          {item.price.toFixed(2)}
+                        </p>
+                        <p className="text-lg font-semibold text-[#A4A4A4] line-through">
+                          $ {item.oldPrice.toFixed(2)}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <p>Qty: {item.quantity}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Order Summary Section */}
           <div className="bg-white p-4 rounded shadow h-fit">
-            <h2 className="text-lg font-semibold mb-4">Shipping & Billing</h2>
+            <h2 className="text-[28px] font-semibold mb-6">
+              Shipping & Billing
+            </h2>
 
+            {/* Home Address */}
             <div className="mb-4">
-              <h1 className="flex items-center gap-2 text-xl font-semibold">
+              <h1 className="flex items-center gap-2 text-[22px] font-semibold">
                 <img src={Location} alt="Location" />
                 Home Address
               </h1>
-              <div className="flex items-center gap-4 mt-2">
-                <p className="flex-1 text-sm pl-[32px]">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <div className="flex justify-between items-start gap-4 mt-2">
+                <p className="text-lg font-normal pl-[32px] break-words w-full">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore.
                 </p>
-                <button className="underline text-[#0702FF]">Edit</button>
+                <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
+                  Edit
+                </button>
               </div>
             </div>
 
-            <div className="mb-4 flex items-center gap-4 mt-2">
-              <p className="flex-1 flex items-center gap-2 text-sm">
-                <img src={Bill} alt="Bill" />
-                Bill To The Same Address
-              </p>
-              <button className="underline text-[#0702FF]">Edit</button>
+            {/* Billing Address */}
+            <div className="mb-4">
+              <div className="flex justify-between items-start gap-4 mt-2">
+                <p className="flex items-center gap-2 text-xl font-normal break-words w-full">
+                  <img src={Bill} alt="Bill" />
+                  Bill To The Same Address 
+                </p>
+                <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
+                  Edit
+                </button>
+              </div>
             </div>
 
-            <div className="mb-4 flex items-center gap-4 mt-2">
-              <p className="flex-1 flex items-center gap-2 text-sm">
-                <img src={Call} alt="Call" />
-                (888) 355-4336
-              </p>
-              <button className="underline text-[#0702FF]">Edit</button>
+            {/* Phone */}
+            <div className="mb-4">
+              <div className="flex justify-between items-start gap-4 mt-2">
+                <p className="flex items-center gap-2 text-xl font-normal break-words w-full">
+                  <img src={Call} alt="Call" />
+                  (888) 355-4336 
+                </p>
+                <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
+                  Edit
+                </button>
+              </div>
             </div>
 
-            <div className="mb-4 flex items-center gap-4 mt-2">
-              <p className="flex-1 flex items-center gap-2 text-sm">
-                <img src={Mail} alt="Mail" />
-                support@elliebathbedandbaby.com
-              </p>
-              <button className="underline text-[#0702FF]">Edit</button>
+            {/* Email */}
+            <div className="mb-4">
+              <div className="flex justify-between items-start gap-4 mt-2">
+                <div className="flex items-start gap-2 text-xl font-normal break-words w-full">
+                  <img src={Mail} alt="Mail" className="mt-1 shrink-0" />
+                  <p className="break-words w-full">
+                    support@elliebathbedandbaby.Com
+                  </p>
+                </div>
+                <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
+                  Edit
+                </button>
+              </div>
             </div>
 
+            {/* Order Summary */}
             <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
             <div className="flex justify-between mb-2">
-              <span>Subtotal ({cartItems.length} item{cartItems.length !== 1 && "s"})</span>
+              <span>
+                Subtotal ({cartItems.length} item{cartItems.length !== 1 && "s"}
+                )
+              </span>
               <span className="font-semibold">USD. {subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between mb-2">
               <span>Shipping Fee</span>
-              <span className="font-semibold">USD. {deliveryFee.toFixed(2)}</span>
+              <span className="font-semibold">
+                USD. {deliveryFee.toFixed(2)}
+              </span>
             </div>
             <div className="flex mb-4 space-x-4">
               <input

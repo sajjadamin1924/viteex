@@ -12,9 +12,9 @@ const Trendingproducts = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className="px-12 py-12">
+    <div className="py-12">
       <div className="flex items-center justify-between">
-        <h1 className='text-2xl font-bold'>Trending Products</h1>
+        <h1 className='text-[42px] font-bold'>Trending Products</h1>
         <div className="flex space-x-4">
           <button ref={prevRef} className="w-10 h-10 rounded-full bg-[#54FF6C] text-black flex items-center justify-center">
             <FaAngleLeft />

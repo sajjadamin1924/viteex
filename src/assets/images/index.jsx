@@ -43,6 +43,9 @@ export {default as Union} from './union.png';
 export {default as Dots} from './dots.png';
 export {default as Heart} from './heart.png';
 export {default as Single} from './single.png';
+export {default as Star} from './star.png';
+export {default as Plus} from './plus.png';
+export {default as Minus} from './minus.png';
 
 
 

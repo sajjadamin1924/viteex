@@ -12,31 +12,37 @@ const Footer = () => {
       {/* Footer content */}
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-4  gap-6">
         <div>
-          <h2 className="text-lg font-semibold mb-2">
+          <h2 className="text-[25px] font-semibold mb-2">
             CORPORATE MAILING ADDRESS
           </h2>
-          <p>1100 Peachtree Street</p>
-          <p>Suite 200</p>
-          <p>Atlanta GA 30309</p>
-          <p>United States</p>
+          <div
+            className="text-xl font-[400px]"
+          >
+            <p>1100 Peachtree Street</p>
+            <p>Suite 200</p>
+            <p>Atlanta GA 30309</p>
+            <p>United States</p>
+          </div>
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold mb-2">TEXT OR CALL</h2>
-          <p>(888) 355-4336</p>
+          <h2 className="text-[25px] font-semibold mb-2">TEXT OR CALL</h2>
+          <p className="text-xl font-[400px]">(888) 355-4336</p>
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold mb-2">PHONE HOURS</h2>
-          <p>MONDAY - FRIDAY</p>
-          <p>10AM UNTIL 5PM EST.</p>
+          <h2 className="text-[25px] font-semibold mb-2">PHONE HOURS</h2>
+          <p className="text-xl font-[400px]">MONDAY - FRIDAY</p>
+          <p className="text-xl font-[400px]">10AM UNTIL 5PM EST.</p>
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold mb-2">WEBSITE</h2>
-          <p>elliebathbedandbaby.com</p>
-          <h2 className="text-lg font-semibold mt-4 mb-2">CUSTOMER SUPPORT</h2>
-          <p>support@elliebathbedandbaby.com</p>
+          <h2 className="text-[22px] font-semibold mb-2">WEBSITE</h2>
+          <p className="text-xl font-[400px]">elliebathbedandbaby.com</p>
+          <h2 className="text-[22px] font-semibold mt-4 mb-2">
+            CUSTOMER SUPPORT
+          </h2>
+          <p className="text-xl font-[400px]">support@elliebathbedandbaby.com</p>
 
           <div className="flex space-x-4 mt-4">
             <a
@@ -61,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="relative z-10 text-sm text-white text-center mt-8 space-x-6">
+      <div className="relative z-10 text-xl font-[400px] text-white text-center mt-8 space-x-6">
         <a href="#">Terms of Use</a>
         <a href="#">Privacy Policy</a>
       </div>

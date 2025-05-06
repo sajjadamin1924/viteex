@@ -3,8 +3,9 @@ import { useNavigate } from "react-router";
 import Header from "../../commoncomponents/header/Header";
 import Footer from "../../commoncomponents/footer/Footer";
 import Todaydeals from "../../commoncomponents/todaydeals/Todaydeals";
-import { Delete, Truck } from "../../assets/images";
+import { Delete, Minus, Plus, Truck } from "../../assets/images";
 import { useCart } from "../../context/Cartcontext";
+import { FaMinus } from "react-icons/fa";
 
 const Mycart = () => {
   const navigate = useNavigate();
@@ -32,10 +33,10 @@ const Mycart = () => {
             <div className="flex flex-col gap-4">
               {/* Delivery Option */}
               <div className="bg-white p-4 rounded shadow">
-                <h1 className="py-4 font-semibold text-lg">
+                <h1 className="py-4 font-medium text-[22px]">
                   Preferred Delivery Option
                 </h1>
-                <div className="flex gap-4 bg-[#F1F2F3] border w-1/3 p-4">
+                <div className="flex gap-6 bg-[#F1F2F3] border w-4/10 p-4">
                   <label className="relative inline-block w-6 h-6">
                     <input
                       type="checkbox"
@@ -54,12 +55,12 @@ const Mycart = () => {
                     </svg>
                   </label>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <p className="font-semibold">Delivery Fee. $2</p>
+                    <div className="flex items-center gap-4">
+                      <p className="font-semibold text-lg">Delivery Fee. $2</p>
                       <img src={Truck} alt="truck" />
                     </div>
-                    <p className="text-sm text-gray-500">Standard</p>
-                    <p className="text-xs text-gray-400">Get by 22-24 Apr 2022</p>
+                    <p className="text-lg font-medium text-[#474747]">Standard</p>
+                    <p className="text-[17px] font-medium text-[#717171]">Get by 22-24 Apr 2022</p>
                   </div>
                 </div>
               </div>
@@ -67,14 +68,14 @@ const Mycart = () => {
 
             {/* Select All & Delete */}
             <div className="mt-6 bg-white p-4 rounded shadow">
-              <div className="flex items-center justify-between mb-4">
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+              <div className="flex items-center justify-between mb-4 ">
+                <label className="flex items-center gap-2 text-lg font-medium text-[#444444]">
                   <input type="checkbox" className="accent-blue-600" />
                   SELECT ALL ({cartItems.length} ITEM{cartItems.length !== 1 ? "S" : ""})
                 </label>
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-2 items-center">
                   <img src={Delete} alt="delete" />
-                  <button className="text-sm" onClick={handleDeleteAll}>DELETE</button>
+                  <button className="text-lg font-medium text-[#292929]" onClick={handleDeleteAll}>DELETE</button>
                 </div>
               </div>
             </div>
@@ -100,46 +101,47 @@ const Mycart = () => {
                         className="w-24 h-24 object-cover rounded"
                       />
                       <div>
-                        <p className="font-semibold">{item.name}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="font-semibold text-xl">{item.name}</p>
+                        <p className="text-lg font-light text-[#5C5C5C]">
                           No Brand, Family Color, Best Quality
                         </p>
-                        <p className="text-xs text-green-500 mt-1">30% OFF</p>
+                        <p className="text-lg font-semibold text-[#5C5C5C] mt-1">30% OFF</p>
                       </div>
                     </div>
 
                     {/* Price & Quantity */}
-                    <div className="text-right">
-                      <p className="text-blue-600 font-semibold">
-                        ${item.price.toFixed(2)}
+                    <div className="text-left">
+                      <p className="text-[#0702FF] font-semibold text-xl">
+                        <span className="text-[#1CAA24]">$</span> {''}{item.price.toFixed(2)}
                       </p>
-                      <p className="text-sm text-gray-400 line-through">$38.00</p>
+                      <p className="text-lg font-semibold line-through text-[#A4A4A4]">${' '}38.00</p>
                       <div className="flex items-center gap-2 mt-2 justify-end">
                         <button
-                          className="px-2 rounded bg-[#C4C4C4]"
+                          className=" bg-[#C4C4C4] text-2xl font-semibold"
                           onClick={() =>
                             updateQuantity(item.id, item.quantity - 1)
                           }
                         >
-                          -
+                         <FaMinus className="text-2xl font-semibold bg-[#C4C4C4] w-8 h-8 p-2" />
+
                         </button>
                         <span>{item.quantity}</span>
                         <button
-                          className="px-2 rounded bg-[#C4C4C4]"
+                          className=" bg-[#C4C4C4] text-2xl font-semibold"
                           onClick={() =>
                             updateQuantity(item.id, item.quantity + 1)
                           }
                         >
-                          +
+                          <img  className="w-8 h-8 p-2" src={Plus} alt="img" />
                         </button>
                       </div>
                     </div>
 
                     {/* Delete */}
-                    <div className="flex flex-col items-center justify-center gap-2">
+                    <div className="flex  items-center justify-center gap-2">
                       <img src={Delete} alt="delete" />
                       <button
-                        className="text-sm"
+                        className="text-lg font-medium text-[#292929]"
                         onClick={() => removeFromCart(item.id)}
                       >
                         DELETE
@@ -153,30 +155,30 @@ const Mycart = () => {
 
           {/* Order Summary */}
           <div className="bg-white p-4 rounded shadow h-fit">
-            <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-            <div className="flex justify-between mb-2">
+            <h2 className="text-[28px] font-semibold mb-4">Order Summary</h2>
+            <div className="flex justify-between mb-2 text-xl font-normal">
               <span>
                 Subtotal ({cartItems.length} item
                 {cartItems.length !== 1 ? "s" : ""})
               </span>
-              <span className="font-semibold">USD. {subtotal.toFixed(2)}</span>
+              <span>USD. {subtotal.toFixed(2)}</span>
             </div>
-            <div className="flex mb-4">
+            <div className="flex mb-4 gap-4">
               <input
                 type="text"
                 placeholder="Enter Voucher Code"
-                className="flex-1 border px-3 py-1 rounded-l"
+                className="flex-1 bg-[#F3F3F3] px-3 py-1 text-[18px] font-normal outline-0"
               />
-              <button className="bg-blue-500 text-white px-4 rounded-r">
+              <button className="bg-[#197CC0] text-white px-4 text-[18px] font-medium">
                 APPLY
               </button>
             </div>
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between mb-4 font-normal text-[28px]">
               <span>Total</span>
-              <span className="font-semibold">USD. {subtotal.toFixed(2)}</span>
+              <span>USD. {subtotal.toFixed(2)}</span>
             </div>
             <button
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded"
+              className="w-full bg-green-500 hover:bg-green-600 text-white text-[25px] font-semibold py-2 rounded"
               onClick={handleCheckout}
             >
               Proceed to Checkout
