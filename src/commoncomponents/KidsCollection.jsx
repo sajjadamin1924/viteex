@@ -17,7 +17,7 @@ const KidsCollection = () => {
             <img
               src={Blue}
               alt="Top Right"
-              className="absolute top-[12px] right-[12px] translate-x-full -translate-y-full"
+              className="absolute top-[12px] right-[30px] translate-x-full -translate-y-full"
             />
             <img
               src={Blue}

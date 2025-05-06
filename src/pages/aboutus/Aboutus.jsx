@@ -97,7 +97,7 @@ const Aboutus = () => {
         <img
           src={Green}
           alt="Bottom Right"
-          className="absolute bottom-0 right-0 left-[92px] top-[36px] translate-x-full translate-y-full"
+          className="absolute bottom-0 right-0 left-[157px] top-[36px] translate-x-full translate-y-full"
         />
 
         {/* Heading */}

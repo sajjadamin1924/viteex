@@ -38,11 +38,12 @@ const Footer = () => {
 
         <div>
           <h2 className="text-[22px] font-semibold mb-2">WEBSITE</h2>
-          <p className="text-xl font-[400px]">elliebathbedandbaby.com</p>
+          <p className="text-xl font-[400px] break-words">elliebathbedandbaby.com</p>
           <h2 className="text-[22px] font-semibold mt-4 mb-2">
             CUSTOMER SUPPORT
           </h2>
-          <p className="text-xl font-[400px]">support@elliebathbedandbaby.com</p>
+          <p className="text-xl font-[400] break-words">support@elliebathbedandbaby.com</p>
+
 
           <div className="flex space-x-4 mt-4">
             <a

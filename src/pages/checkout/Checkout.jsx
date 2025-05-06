@@ -156,7 +156,7 @@ const Checkout = () => {
               <div className="flex justify-between items-start gap-4 mt-2">
                 <p className="flex items-center gap-2 text-xl font-normal break-words w-full">
                   <img src={Bill} alt="Bill" />
-                  Bill To The Same Address 
+                  Bill To The Same Address
                 </p>
                 <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
                   Edit
@@ -169,7 +169,7 @@ const Checkout = () => {
               <div className="flex justify-between items-start gap-4 mt-2">
                 <p className="flex items-center gap-2 text-xl font-normal break-words w-full">
                   <img src={Call} alt="Call" />
-                  (888) 355-4336 
+                  (888) 355-4336
                 </p>
                 <button className="shrink-0 underline text-[#0702FF] text-lg font-normal">
                   Edit
@@ -180,7 +180,7 @@ const Checkout = () => {
             {/* Email */}
             <div className="mb-4">
               <div className="flex justify-between items-start gap-4 mt-2">
-                <div className="flex items-start gap-2 text-xl font-normal break-words w-full">
+                <div className="flex items-start gap-2 text-xl font-normal break-words w-3/4">
                   <img src={Mail} alt="Mail" className="mt-1 shrink-0" />
                   <p className="break-words w-full">
                     support@elliebathbedandbaby.Com
@@ -193,36 +193,35 @@ const Checkout = () => {
             </div>
 
             {/* Order Summary */}
-            <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-            <div className="flex justify-between mb-2">
+            <h2 className="text-[28px] font-semibold mb-4">Order Summary</h2>
+            <div className="flex justify-between mb-2 font-normal text-[22px]">
               <span>
                 Subtotal ({cartItems.length} item{cartItems.length !== 1 && "s"}
                 )
               </span>
-              <span className="font-semibold">USD. {subtotal.toFixed(2)}</span>
+              <span>USD. {subtotal.toFixed(2)}</span>
             </div>
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between mb-2 font-normal text-[22px]">
               <span>Shipping Fee</span>
-              <span className="font-semibold">
-                USD. {deliveryFee.toFixed(2)}
-              </span>
+              <span>USD. {deliveryFee.toFixed(2)}</span>
             </div>
-            <div className="flex mb-4 space-x-4">
+            <div className="flex flex-wrap mb-4 space-x-0 sm:space-x-4 space-y-2 sm:space-y-0">
               <input
                 type="text"
                 placeholder="Enter Voucher Code"
-                className="flex-1 px-3 py-1 rounded-l outline-0 bg-[#F1F2F3]"
+                className="flex-1 px-3 py-2 outline-0 bg-[#F1F2F3] text-lg font-normal min-w-[200px]"
               />
-              <button className="bg-blue-500 text-white px-4 rounded-r">
+              <button className="bg-[#197CC0] text-white px-4 py-2 text-lg font-medium">
                 APPLY
               </button>
             </div>
-            <div className="flex justify-between mb-4">
+
+            <div className="flex justify-between mb-4 text-[22px] font-normal">
               <span>Total</span>
-              <span className="font-semibold">USD. {total.toFixed(2)}</span>
+              <span>USD. {total.toFixed(2)}</span>
             </div>
             <button
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded"
+              className="w-full bg-[#54ff6c] text-2xl font-semibold text-white py-2 rounded"
               onClick={handlePay}
             >
               Proceed to pay
