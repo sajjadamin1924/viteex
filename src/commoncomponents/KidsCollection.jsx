@@ -43,7 +43,7 @@ const KidsCollection = () => {
       >
         {/* Text Section */}
         <div className="w-1/2 text-white px-16 py-16">
-          <h1 className="text-[64px] font-md">
+          <h1 className="text-[64px] font-bold">
             Best Style <br />
             Collection for your Kids
           </h1>

@@ -24,7 +24,7 @@ const Bath = () => {
 
   const handleClick = () => {
     navigate("/moreview");
-  }
+  };
   return (
     <>
       <div className="relative w-fit mt-8 mb-4">
@@ -92,8 +92,14 @@ const Bath = () => {
 
                 <img src={item.img} alt={item.text} />
               </div>
-              <p className="mt-4 text-[18px] font-[600px]">{item.text}</p>
-              <button className="flex items-center gap-1 text-green-600 mt-2 text-[16px] font-medium" onClick={handleClick}> 
+              <p className="mt-4 text-[18px] font-[600px]  leading-snug line-clamp-2 h-[48px]">
+                {item.text}
+              </p>
+
+              <button
+                className="flex items-center gap-1 text-green-600 mt-2 text-[16px] font-medium"
+                onClick={handleClick}
+              >
                 View All
                 <IoArrowForwardSharp />
               </button>
@@ -105,7 +111,7 @@ const Bath = () => {
           <img src={Rectangle7} className="h-full w-full" alt="baby image" />
 
           <div className="absolute top-36 left-8 flex flex-col items-center justify-center text-black">
-            <h2 className="text-5xl font-bold mb-4 text-[#343434] text-center">
+            <h2 className="text-5xl font-bold mb-4 text-[#343434] text-center break-words">
               VALUE KITS & <span className="text-4xl">BUNDLE DEALS</span>
             </h2>
             <button className="bg-[#54FF6C] text-[32px]  font-medium py-2 px-4 rounded mt-100">

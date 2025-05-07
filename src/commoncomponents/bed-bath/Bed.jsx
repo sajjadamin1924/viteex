@@ -66,7 +66,9 @@ const Bed = () => {
         ].map((item, index) => (
           <div key={index} className="flex flex-col bg-[#F2F1F1] p-2">
             <img src={item.img} className="h-full" alt="" />
-            <p className="mt-4 text-[18px] font-[600px]">{item.text}</p>
+            <p className="mt-4 text-[18px] font-[600px]  leading-snug line-clamp-3 h-28">
+                {item.text}
+              </p>
             <button className="flex items-center gap-1 text-green-600 mt-2 font-[500px] text-[16px]" onClick={handleClick}>
               View All
               <IoArrowForwardSharp />

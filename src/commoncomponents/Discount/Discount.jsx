@@ -46,7 +46,7 @@ const Discount = () => {
             <h1 className="text-center text-[22px] font-bold text-[#54FF6C] mt-6">
               Product
             </h1>
-            <h2 className="text-center text-white text-[62px] font-bold mt-4">
+            <h2 className="text-center text-white text-[62px] font-bold mt-4 leading-14">
               Sale Off Baby Things
             </h2>
             <p className="text-center text-white text-[22px] font-[400px] m-4">
