@@ -17,8 +17,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-
-  const { isMobile } = useBreakpoint();
+  const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   const categories = [
     "kids Collection",
@@ -64,7 +63,7 @@ const Header = () => {
   return (
     <div className="text-base font-sans text-black">
       {/* Top Banner */}
-      {!isMobile && (
+      {isDesktop && (
         <div className="bg-black text-white text-sm">
           <div className="px-12 py-2 flex justify-between items-center">
             <div>
@@ -81,24 +80,24 @@ const Header = () => {
       )}
 
       {/* Main Header */}
-      <div className="px-4 md:px-12 py-4 flex justify-between items-center">
+      <div className="px-4 md:px-8 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo */}
-        <img src={Logo} alt="Logo" className="h-12 md:h-16" />
+        <img src={Logo} alt="Logo" className="h-10 sm:h-12 md:h-14 lg:h-16" />
 
-        {/* Search Bar and Categories */}
-        {!isMobile && (
+        {/* Search Bar + Categories (Tablet and Desktop only) */}
+        {(isTablet || isDesktop) && (
           <div className="flex items-center relative">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-[#CFCFCF] p-3 pr-40 pl-6 outline-0 text-black"
+              className="bg-[#CFCFCF] p-2 md:p-3 pr-36 md:pr-40 pl-4 md:pl-6 outline-0 text-black"
               placeholder="Search anything..."
             />
 
             <div className="relative">
               <p
-                className="cursor-pointer bg-[#91cb94] p-3 flex items-center gap-1 font-medium"
+                className="cursor-pointer bg-[#91cb94] px-4 py-2 md:p-3 flex items-center gap-1 font-medium"
                 onClick={toggleCategoryDropdown}
               >
                 Categories <FaAngleDown />
@@ -126,9 +125,9 @@ const Header = () => {
           </div>
         )}
 
-        {/* Icons & Mobile Menu */}
-        <div className="flex gap-6 items-center">
-          {!isMobile && <CiHeart className="text-2xl cursor-pointer" />}
+        {/* Icons */}
+        <div className="flex gap-4 md:gap-6 items-center">
+          {(isTablet || isDesktop) && <CiHeart className="text-2xl cursor-pointer" />}
           <CiShoppingCart className="text-2xl cursor-pointer" onClick={handleClickCart} />
           <div className="relative">
             <CiUser className="text-2xl cursor-pointer" onClick={toggleDropdown} />
@@ -158,10 +157,10 @@ const Header = () => {
       </div>
 
       {/* Navigation Menu */}
-      {!isMobile ? (
+      {(isTablet || isDesktop) ? (
         <div className="bg-[#91cb94]">
-          <div className="px-12 py-2">
-            <ul className="flex items-center justify-center gap-10 font-medium text-lg">
+          <div className="px-4 md:px-8 lg:px-12 py-2">
+            <ul className="flex flex-wrap justify-center gap-6 lg:gap-10 font-medium text-base lg:text-lg">
               <li className="hover:underline cursor-pointer">New</li>
               <li className="hover:underline cursor-pointer">Diapers</li>
               <li className="hover:underline cursor-pointer">Wipes</li>
