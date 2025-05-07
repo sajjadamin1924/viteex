@@ -5,8 +5,9 @@ import { Heart, Rectangle56, Single } from "../../assets/images";
 import { useCart } from "../../context/Cartcontext";
 import { useNavigate } from "react-router";
 import Todaydeals from "../../commoncomponents/todaydeals/Todaydeals";
+import { useMediaQuery } from "react-responsive";
 
-const ProductPage = () => {
+const Singleproduct = () => {
   const [quantity, setQuantity] = useState(1);
   const { addToCart, cartItems } = useCart();
   const Navigate = useNavigate();
@@ -26,14 +27,19 @@ const ProductPage = () => {
     Navigate("/mycart");
   };
 
+  // Media queries
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(min-width: 769px) and (max-width: 1024px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1025px)" });
+
   return (
     <>
       <Header />
       <div className="p-10 bg-gray-50 min-h-screen">
         {/* Product Section */}
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className={`flex flex-col ${isDesktop ? 'lg:flex-row' : 'flex-col'} gap-10`}>
           {/* Left: Images */}
-          <div className="flex flex-col items-center flex-1 max-w-xl">
+          <div className={`flex ${isMobile ? 'flex-col items-center' : 'flex-col items-start'} flex-1 max-w-xl`}>
             <img
               src={Rectangle56}
               alt="Body Scrub"
@@ -52,13 +58,13 @@ const ProductPage = () => {
           </div>
 
           {/* Right: Info */}
-          <div className="flex-1 max-w-xl">
+          <div className={`flex-1 max-w-xl ${isMobile ? 'text-center' : 'text-left'}`}>
             <h2 className="text-[35px] font-semibold text-[#343434] mb-2">
               BODY SCRUB BEST QUALITY PACK
             </h2>
 
             <p className="font-semibold text-[28px] mt-4">{product.name}</p>
-            <div className="text-xl flex items-center gap-4">
+            <div className="text-xl flex items-center gap-4 justify-center">
               <span className="text-[#0c2dfe] font-semibold text-[35px]">
                 <span className="text-[#1caa24]">$</span>
                 {product.price.toFixed(2)}
@@ -67,8 +73,8 @@ const ProductPage = () => {
                 ${product.oldPrice.toFixed(2)}
               </span>
             </div>
-            <div className="space-x-6 flex text-[#444444]">
-              <button className="flex items-center text-2xl font-normal  mb-4">
+            <div className="space-x-6 flex justify-center text-[#444444]">
+              <button className="flex items-center text-2xl font-normal mb-4">
                 <img
                   src={Heart}
                   className="w-6 h-6 mr-2 text-[#444444]"
@@ -88,7 +94,7 @@ const ProductPage = () => {
             </div>
 
             {/* Colors */}
-            <div className="mb-4 flex items-center gap-4">
+            <div className="mb-4 flex items-center gap-4 justify-center">
               <span className="block font-bold text-2xl mb-1">Color:</span>
               <div className="flex gap-2">
                 {[
@@ -100,16 +106,16 @@ const ProductPage = () => {
                 ].map((color, i) => (
                   <div
                     key={i}
-                    className={`w-6 h-6  ${color}  cursor-pointer`}
+                    className={`w-6 h-6 ${color} cursor-pointer`}
                   />
                 ))}
               </div>
             </div>
 
             {/* Sizes */}
-            <div className="mb-4 flex items-center gap-4">
+            <div className="mb-4 flex items-center gap-4 justify-center">
               <span className="block font-bold text-2xl mb-1">Size:</span>
-              <div className="flex gap-4 text-[28px] font-normal ">
+              <div className="flex gap-4 text-[28px] font-normal">
                 {["S", "M", "L", "XL"].map((size) => (
                   <button
                     key={size}
@@ -122,12 +128,12 @@ const ProductPage = () => {
             </div>
 
             {/* Quantity */}
-            <div className="mb-4 flex items-center gap-4">
+            <div className="mb-4 flex items-center gap-4 justify-center">
               <span className="block font-bold text-2xl mb-1">Qty:</span>
               <div className="flex items-center">
                 <button
                   onClick={() => handleQuantityChange(-1)}
-                  className="px-3 py-1 text-2xl font-normal "
+                  className="px-3 py-1 text-2xl font-normal"
                 >
                   -
                 </button>
@@ -145,19 +151,16 @@ const ProductPage = () => {
 
             {/* Description */}
             <div className="mb-6">
-              <span className="inline-block bg-[#54FF6C] text-[#292929] px-4 py-2  text-xl font-bold mb-2">
+              <span className="inline-block bg-[#54FF6C] text-[#292929] px-4 py-2 text-xl font-bold mb-2">
                 Description
               </span>
               <p className="text-[#444444] text-2xl font-normal w-full">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               <button
                 className="bg-[#54FF6C] text-white px-8 py-4 rounded-full font-bold text-[22px]"
                 onClick={() => {
@@ -181,4 +184,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default Singleproduct;
