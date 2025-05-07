@@ -6,6 +6,7 @@ import Todaydeals from "../../commoncomponents/todaydeals/Todaydeals";
 import { Delete, Minus, Plus, Truck } from "../../assets/images";
 import { useCart } from "../../context/Cartcontext";
 import { FaMinus } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 
 const Mycart = () => {
   const navigate = useNavigate();
@@ -16,27 +17,28 @@ const Mycart = () => {
   const handleDeleteAll = () => {
     cartItems.forEach(item => removeFromCart(item.id));
   };
-  
 
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+
   return (
     <>
       <Header />
       <div className="bg-[#F3F3F3] min-h-screen p-6">
-        <div className="grid grid-cols-3 gap-6">
+        <div className={`grid gap-6 ${isDesktop ? "grid-cols-3" : "grid-cols-1"}`}>
           {/* Cart Items Section */}
-          <div className="col-span-2 px-4 gap-4 bg-[#F1F2F3]">
+          <div className={`${isDesktop ? "col-span-2" : ""} px-4 gap-4 bg-[#F1F2F3]`}>
             <div className="flex flex-col gap-4">
               {/* Delivery Option */}
               <div className="bg-white p-4 rounded shadow">
-                <h1 className="py-4 font-medium text-[22px]">
-                  Preferred Delivery Option
-                </h1>
-                <div className="flex gap-6 bg-[#F1F2F3] border w-4/10 p-4">
+                <h1 className="py-4 font-medium text-[22px]">Preferred Delivery Option</h1>
+                <div className="flex gap-4 bg-[#F1F2F3] border p-4">
                   <label className="relative inline-block w-6 h-6">
                     <input
                       type="checkbox"
@@ -54,10 +56,10 @@ const Mycart = () => {
                       />
                     </svg>
                   </label>
-                  <div>
+                  <div className="flex-1">
                     <div className="flex items-center gap-4">
                       <p className="font-semibold text-lg">Delivery Fee. $2</p>
-                      <img src={Truck} alt="truck" />
+                      <img src={Truck} alt="truck" className="w-8 h-8" />
                     </div>
                     <p className="text-lg font-medium text-[#474747]">Standard</p>
                     <p className="text-[17px] font-medium text-[#717171]">Get by 22-24 Apr 2022</p>
@@ -68,29 +70,26 @@ const Mycart = () => {
 
             {/* Select All & Delete */}
             <div className="mt-6 bg-white p-4 rounded shadow">
-              <div className="flex items-center justify-between mb-4 ">
+              <div className="flex items-center justify-between mb-4">
                 <label className="flex items-center gap-2 text-lg font-medium text-[#444444]">
                   <input type="checkbox" className="accent-blue-600" />
                   SELECT ALL ({cartItems.length} ITEM{cartItems.length !== 1 ? "S" : ""})
                 </label>
                 <div className="flex gap-2 items-center">
                   <img src={Delete} alt="delete" />
-                  <button className="text-lg font-medium text-[#292929]" onClick={handleDeleteAll}>DELETE</button>
+                  <button className="text-lg font-medium text-[#292929]" onClick={handleDeleteAll}>
+                    DELETE
+                  </button>
                 </div>
               </div>
             </div>
 
             {/* Cart Items List */}
             {cartItems.length === 0 ? (
-              <p className="mt-6 text-center text-gray-600 text-lg">
-                Your cart is empty.
-              </p>
+              <p className="mt-6 text-center text-gray-600 text-lg">Your cart is empty.</p>
             ) : (
               cartItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-4 rounded shadow w-full mt-6"
-                >
+                <div key={index} className="bg-white p-4 rounded shadow w-full mt-6">
                   <div className="flex justify-between pt-4">
                     {/* Item Info */}
                     <div className="flex gap-4">
@@ -102,9 +101,7 @@ const Mycart = () => {
                       />
                       <div>
                         <p className="font-semibold text-xl">{item.name}</p>
-                        <p className="text-lg font-light text-[#5C5C5C]">
-                          No Brand, Family Color, Best Quality
-                        </p>
+                        <p className="text-lg font-light text-[#5C5C5C]">No Brand, Family Color, Best Quality</p>
                         <p className="text-lg font-semibold text-[#5C5C5C] mt-1">30% OFF</p>
                       </div>
                     </div>
@@ -118,27 +115,22 @@ const Mycart = () => {
                       <div className="flex items-center gap-2 mt-2 justify-end">
                         <button
                           className=" bg-[#C4C4C4] text-2xl font-semibold"
-                          onClick={() =>
-                            updateQuantity(item.id, item.quantity - 1)
-                          }
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         >
-                         <FaMinus className="text-2xl font-semibold bg-[#C4C4C4] w-8 h-8 p-2" />
-
+                          <FaMinus className="text-2xl font-semibold bg-[#C4C4C4] w-8 h-8 p-2" />
                         </button>
                         <span>{item.quantity}</span>
                         <button
                           className=" bg-[#C4C4C4] text-2xl font-semibold"
-                          onClick={() =>
-                            updateQuantity(item.id, item.quantity + 1)
-                          }
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
-                          <img  className="w-8 h-8 p-2" src={Plus} alt="img" />
+                          <img className="w-8 h-8 p-2" src={Plus} alt="img" />
                         </button>
                       </div>
                     </div>
 
                     {/* Delete */}
-                    <div className="flex  items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2">
                       <img src={Delete} alt="delete" />
                       <button
                         className="text-lg font-medium text-[#292929]"
@@ -186,7 +178,7 @@ const Mycart = () => {
           </div>
         </div>
       </div>
-      <Todaydeals />
+      {!isMobile && <Todaydeals />}
       <Footer />
     </>
   );

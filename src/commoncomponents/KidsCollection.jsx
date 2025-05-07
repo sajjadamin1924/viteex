@@ -1,12 +1,16 @@
 import { babyImage, Blue, Green } from "../assets/images";
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 const KidsCollection = () => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   return (
-    <div>
+    <div className="px-4">
       {/* Fancy Heading with corner icons */}
       <div className="relative w-fit my-8">
-        <h1 className="py-4 mt-4 mb-4 text-[32px]">
+        <h1 className={`py-4 mt-4 mb-4 ${isMobile ? "text-2xl" : "text-[32px]"}`}>
           Find Kid's{" "}
           <span className="relative inline-block font-bold">
             <img
@@ -22,7 +26,7 @@ const KidsCollection = () => {
             <img
               src={Blue}
               alt="Bottom Left"
-              className="absolute bottom-[10px] left-[20px]translate-x-full translate-y-full"
+              className="absolute bottom-[10px] right-[160px] translate-x-full translate-y-full"
             />
             <img
               src={Green}
@@ -36,29 +40,29 @@ const KidsCollection = () => {
 
       {/* Main Section */}
       <div
-        className="w-full rounded-[40px] flex overflow-hidden"
+        className={`w-full rounded-[40px] overflow-hidden flex ${isTabletOrMobile ? "flex-col" : "flex-row"}`}
         style={{
           background: "linear-gradient(100deg, #0702FF, #54FF6C)",
         }}
       >
         {/* Text Section */}
-        <div className="w-1/2 text-white px-16 py-16">
-          <h1 className="text-[64px] font-bold">
+        <div className={`${isTabletOrMobile ? "w-full text-center" : "w-1/2 text-left"} text-white px-6 py-10 md:px-16 md:py-16`}>
+          <h1 className={`${isMobile ? "text-3xl" : isTabletOrMobile ? "text-4xl" : "text-[64px]"} font-bold leading-tight`}>
             Best Style <br />
             Collection for your Kids
           </h1>
 
-          <p className="text-xl font-semibold mt-4">
+          <p className={`mt-4 font-semibold ${isMobile ? "text-base" : "text-xl"}`}>
             Get special offers just for you
           </p>
-          <button className="bg-[#54FF6C] text-white rounded-full py-3 px-10 text-2xl font-semibold mt-16">
+          <button className={`bg-[#54FF6C] text-white rounded-full ${isMobile ? "py-2 px-6 text-base" : "py-3 px-10 text-2xl"} font-semibold mt-10`}>
             Shop Now
           </button>
         </div>
 
         {/* Image Section */}
-        <div className="w-1/2 flex justify-center items-center p-8">
-          <div className="rounded-3xl border-[12px] border-[#C4C4C4] overflow-hidden">
+        <div className={`${isTabletOrMobile ? "w-full" : "w-1/2"} flex justify-center items-center p-4`}>
+          <div className="rounded-3xl border-[12px] border-[#C4C4C4] overflow-hidden max-w-[400px] w-full">
             <img
               src={babyImage}
               alt="Baby"

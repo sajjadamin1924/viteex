@@ -13,16 +13,39 @@ import Discount from '../../commoncomponents/Discount/Discount';
 const Mainbra = () => {
   return (
     <>
-  <Header />
-  <KidsCollection />
-  <Bath />
-  <Bed />
-  <Trendingproducts />
-  <Products />
-  <Discount />
-  <Newsletter />
-  <Footer />
-    </>
+    
+    <Header />
+    <div className='px-12'>
+  
+    <div id="kids-collection">
+      <KidsCollection />
+    </div>
+  
+    <div id="bath-&-body">
+      <Bath />
+    </div>
+  
+    <div id="bed-&-bath">
+      <Bed />
+    </div>
+  
+    <div id="trending-products">
+      <Trendingproducts />
+    </div>
+  
+    <div id="product-collections">
+      <Products />
+    </div>
+  
+    <div id="discount-offers">
+      <Discount />
+    </div>
+  
+    <Newsletter />
+    <Footer />
+    </div>
+  </>
+  
   )
 }
 
